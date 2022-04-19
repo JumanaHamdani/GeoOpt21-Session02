@@ -20,13 +20,10 @@ def addRandomWeigrhs(G):
     
     return NG
 
-def getNodes(G, layout = 1):
+def getNodes(G):
 
-    if layout == 0 : lay =  nx.kamada_kawai_layout(G)
-    elif layout == 1 : lay =  nx.circular_layout(G)
-    elif layout == 2 : lay =  nx.shell_layout(G)
-    elif layout == 3 : lay =  nx.spiral_layout(G)
-    else: lay = nx.planar_layout(G)
+    lay =  nx.circular_layout(G)
+    
 
     nodes = []
     for d in lay.values():
@@ -36,14 +33,10 @@ def getNodes(G, layout = 1):
     return nodes
 
 
-def getEdges(G, layout = 1):
+def getEdges(G):
 
-    if layout == 0 : lay =  nx.kamada_kawai_layout(G)
-    elif layout == 1 : lay =  nx.circular_layout(G)
-    elif layout == 2 : lay =  nx.shell_layout(G)
-    elif layout == 3 : lay =  nx.spiral_layout(G)
-    else: lay = nx.planar_layout(G)
-
+    lay = nx.circular_layout(G)
+    
     edges = []
     for e in G.edges:
         p1 = rg.Point3d( lay[e[0]][0], lay[e[0]][1], 0 )
@@ -54,12 +47,12 @@ def getEdges(G, layout = 1):
     return edges
 
 
-
+"""
 G = createGridGraph(3,3)
 GW = addRandomWeigrhs(G)
 
 nodes = getNodes(G)
 edges = getEdges(G)
 
-
+"""
 

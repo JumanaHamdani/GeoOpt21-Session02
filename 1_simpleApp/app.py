@@ -20,7 +20,7 @@ hops = hs.Hops(app)
         hs.HopsInteger("Age", "A", "Provide your age")
     ],
     outputs=[
-       hs.HopsString("Text","T","Print name and age")
+       hs.HopsString("Texty","T","Print name and age")
     ]
 )
 def printNameAndAge(name, age):
